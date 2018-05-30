@@ -11,6 +11,9 @@ def create_tcp_s():
     loop = asyncio.get_event_loop()
     # Each client connection will create a new protocol instance
     # sProtocol = QxbServerProtocol(loop)
+    'have to use -->lambda:QxbServerProtocol(loop) not use QxbServerProtocol(loop),' \
+    'the reason i does not konw'
+
     coro = loop.create_server(lambda:QxbServerProtocol(loop), '127.0.0.1', 17693)
     server = loop.run_until_complete(coro)
 

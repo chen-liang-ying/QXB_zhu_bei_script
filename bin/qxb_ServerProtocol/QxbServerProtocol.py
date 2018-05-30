@@ -26,6 +26,7 @@ class QxbServerProtocol(asyncio.Protocol):
         qxbProxy.addClient(self)
 
         '此时创建heart'
+        '时间函数self.sendHeart相当于一个指针，不需要()'
         timer = Timer(3,self.sendHeart)
         timer.start()
 
